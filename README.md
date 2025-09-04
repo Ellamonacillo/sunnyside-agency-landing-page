@@ -25,8 +25,8 @@ Sunnyside Agency Landing Page
 
 ### Links
 
-- Solution URL: [Github](https://your-solution-url.com)
-- Live Site URL: [Github Pages](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/Ellamonacillo/sunnyside-agency-landing-page.github.io)
+- Live Site URL: [Netlify](https://mgm-sunnyside-agency-landing-page.netlify.app/)
 
 
 ## My process
