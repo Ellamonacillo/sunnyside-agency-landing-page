@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-primary: 'Barlow', sans-serif;
+  --font-heading: 'Fraunces', serif;
+
+  --color-red-500: hsl(7, 99%, 70%);
+  --color-red-400: hsl(7, 99%, 90%);
+  --color-yellow-600: hsl(51, 99%, 90%);
+  --color-yellow-500: hsl(51, 100%, 49%);
+  --color-green-800: hsl(167, 40%, 24%);
+  --color-blue-800: hsl(198, 62%, 26%);
+  --color-green-500: hsl(167, 34%, 41%);
+
+  --color-gray-950: hsl(212, 27%, 19%);
+  --color-gray-600: hsl(213, 9%, 39%);
+  --color-gray-550: hsl(232, 10%, 55%);
+  --color-gray-400: hsl(210, 4%, 67%);
+  --color-white: hsl(0, 100%, 100%);
+}
+
+@layer base {
+    body {
+        @apply w-full h-auto font-primary;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-heading;
+    }
+    h1 {
+        @apply text-[45px] md:text-6xl text-white tracking-widest uppercase;
+    }
+    h2 {
+        @apply text-3xl font-black;
+    }
+    h3 {
+        @apply text-xl;
+    }
+    header {
+        @apply bg-cover bg-center h-[85vh];
+    }
+    nav {
+        @apply flex justify-between py-7 px-6 md:p-10 relative;
+
+        li {
+            @apply text-gray-400 text-lg md:text-white hover:cursor-pointer;  
+        }
+        .last-button {
+            @apply rounded-full bg-yellow-500 px-8 py-4 font-heading uppercase md:bg-white md:hover:bg-white/40 transition-colors duration-200;
+        }
+    }
+    footer {
+        @apply bg-[#91d4c4] text-green-500 flex-around flex-col px-10 py-15 space-y-10;
+
+        .nav-links {
+            @apply flex-around w-full md:max-w-xs;
+
+            li {
+                @apply hover:text-white hover:cursor-pointer transition-colors duration-200;
+            }
+        }
+        .social-links {
+            @apply flex-center space-x-5 mt-10;
+
+            li {
+                @apply hover:brightness-0 hover:invert transition duration-200;
+            }
+        }
+    }
+}
+
+@layer components {
+    .mobile-nav {
+        @apply absolute left-0 right-0 top-full mx-6;
+
+        .arrow-wrapper {
+            @apply relative flex justify-end;
+
+            .arrow {
+                @apply w-0 h-0 border-l-25 border-r-0 border-b-35 border-transparent border-b-white;
+            }
+        }
+        ul {
+            @apply bg-white py-10 flex-center flex-col space-y-10 md:hidden;
+        }
+    }
+
+    .desktop-nav {
+        @apply hidden space-x-10 md:flex-center;
+    }
+
+    .hero-container {
+        @apply flex-center flex-col text-center mt-12 gap-12 md:mt-16 md:gap-20;
+    }
+
+    .service-container {
+        @apply flex flex-col;
+
+        .background-container {
+            @apply flex flex-col md:flex-row w-full;
+
+            .background-wrapper {
+                @apply relative w-full bg-no-repeat bg-contain bg-center;
+
+                .background-image-container {
+                    @apply absolute inset-0 flex justify-end flex-col text-center pb-15 px-5 space-y-5 md:items-center;
+
+                    p {
+                        @apply font-semibold md:max-w-[22rem];
+                    }
+                }
+            }
+        }
+        .normal-container {
+            @apply flex flex-col md:flex-row;
+
+            img {
+                @apply w-full md:w-1/2 object-cover;
+            }
+            .service-wrapper {
+                @apply px-6 py-15 flex-center flex-col text-center gap-7 md:px-26 md:items-start md:text-left;
+
+                h2 {
+                    @apply text-gray-950 md:text-4xl md:pr-10;
+                }
+                p {
+                    @apply text-gray-550 text-lg;
+                }
+                .learn-more {
+                    @apply relative inline-block;
+
+                    a {
+                        @apply relative z-10 px-1 uppercase font-heading text-gray-950 font-bold;
+                    }
+                    .line {
+                        @apply absolute inset-x-0 bottom-0 h-2 rounded-full z-0;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    .testimonial-container {
+        @apply py-10 px-6 text-center md:py-25 md:px-25;
+
+        .testimonial-title {
+            @apply pb-10 uppercase text-gray-400 font-bold tracking-widest text-lg;
+        }
+        .testimonial-wrapper {
+            @apply flex-center flex-col py-7;
+
+            img {
+                @apply rounded-full w-20 h-20;
+            }
+            p {
+                @apply text-gray-600 text-lg py-7 md:py-14;
+            }
+            h3 {
+                @apply text-gray-950;
+            }
+            span {
+                @apply text-gray-400 py-2 text-sm;
+            }
+        }
+    }
+
+    .gallery {
+        @apply grid grid-cols-2 md:grid-cols-4;
+    }
+}
+
+@utility flex-center {
+    @apply flex items-center justify-center;
+}
+@utility flex-around {
+    @apply flex items-center justify-around;
+}
+@utility flex-between {
+    @apply flex items-center justify-between;
+}
